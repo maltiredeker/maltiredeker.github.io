@@ -1,6 +1,5 @@
 {
   "name": "malti-app",
-  "homepage": "https://maltiredeker.github.io/malti-app",
   "private": true,
   "version": "0.0.0",
   "type": "module",
