@@ -5,12 +5,12 @@ import { faEnvelope } from '@fortawesome/free-solid-svg-icons';
 
 export default function Contact() {
   return (
-    <section id = "contact" className = "min-h-screen w-viewport bg-[url('/src/images/Backgrounds/starry-bg.png')] bg-cover bg-center pt-30 px-20 mb-10 lg:mb-5">
+    <section id = "contact" className = "min-h-screen w-viewport bg-[url('/images/Backgrounds/starry-bg.png')] bg-cover bg-center pt-30 px-20 mb-10 lg:mb-5">
       <div className = "flex flex-col justify-center items-center md:flex-row">
       
         <h1 className="flex lg:hidden md:hidden text-white mb-5"> Hi, I'm Malti! </h1>
         
-        <img src = "src/images/Malti_Red_Portrait.jpeg" className = "rounded-full w-[90%] h-1/2 mb-10  md:mb-0 md:w-[40%] md:mr-20 lg:w-[35%] lg:mr-30" alt = "Portrait of Malti Redeker."/> 
+        <img src = "/images/Malti_Red_Portrait.jpeg" className = "rounded-full w-[90%] h-1/2 mb-10  md:mb-0 md:w-[40%] md:mr-20 lg:w-[35%] lg:mr-30" alt = "Portrait of Malti Redeker."/> 
 
         <div className = "flex flex-col">
           <h1 className="hidden md:flex text-white md:w-full md:mb-4" style={{ textShadow: '0 0 4px white' }}> Hi, I'm Malti! </h1>
