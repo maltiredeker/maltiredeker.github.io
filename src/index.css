@@ -26,13 +26,19 @@
   transition: background-color 0.2s;
 }
 
+.whiteGradientButton:hover{
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
 h1 {
   font-size: 3em;
   text-shadow: 0 0 4px white;
 }
 
 h2 {
-  font-size: 1.5em;
+  font-size: 2em;
+  text-shadow: 0 0 4px white;
+
 }
 
 h3 {

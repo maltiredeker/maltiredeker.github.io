@@ -10,7 +10,7 @@ export default function Design() {
   const TraditionalImages = [
   '/images/Traditional/img1.jpg',
   '/images/Traditional/img2.jpg',
-  '/images/Traditional/img3.JPG',
+  '/images/Traditional/img3.jpg',
   '/images/Traditional/img4.JPG',
   '/images/Traditional/img5.PNG',
   '/images/Traditional/img6.jpg',
@@ -101,12 +101,13 @@ export default function Design() {
 
   return (
     <section className = "min-h-screen w-viewport bg-[url('/images/Backgrounds/space-bg.png')] bg-cover bg-center -mt-20 pt-30 px-20">
-      <h1 className = "mb-5">Explore my design...</h1>
+      <h1 className = "hidden md:flex mb-5">Explore my design...</h1>
+      <h2 className = "flex md:hidden mb-5">Explore my design... </h2>
 
       <TabGroup>
       <TabList className = "flex flex-row flex-wrap gap-5 mb-5">
         {tabLabels.map((label) => (
-          <Tab key = {label} className = "whiteGradientButton">{label}</Tab>
+          <Tab key = {label} className = "whiteGradientButton data-selected:bg-white/30">{label}</Tab>
         ))}
       </TabList>
       <TabPanels className = "mb-20 md:mb-10">
