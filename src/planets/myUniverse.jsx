@@ -1,8 +1,8 @@
 import { Canvas, useFrame, useLoader } from '@react-three/fiber'
 import { TextureLoader} from 'three'
 import { useRef, useMemo, useEffect} from 'react'
-import planetTextureSrc from "public/images/Textures/mars_texture.jpg"
-import moonTextureSrc from "public/images/Textures/moon_texture.jpg"
+import planetTextureSrc from "/images/Textures/mars_texture.jpg"
+import moonTextureSrc from "/images/Textures/moon_texture.jpg"
 import { OrbitControls, Environment} from '@react-three/drei'
 import * as THREE from 'three'
 

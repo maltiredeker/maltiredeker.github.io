@@ -2,7 +2,7 @@ import { Link, useLocation } from "react-router-dom";
 import { useEffect, useState, useRef} from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBars } from "@fortawesome/free-solid-svg-icons";
-import signature from "../images/Signature.png";
+import signature from "/images/Signature.png";
 
 export default function Header() {
   const location = useLocation();

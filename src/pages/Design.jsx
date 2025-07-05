@@ -102,6 +102,7 @@ export default function Design() {
   return (
     <section className = "min-h-screen w-viewport bg-[url('/images/Backgrounds/space-bg.png')] bg-cover bg-center -mt-20 pt-30 px-20">
       <h1 className = "mb-5">Explore my design...</h1>
+
       <TabGroup>
       <TabList className = "flex flex-row flex-wrap gap-5 mb-5">
         {tabLabels.map((label) => (
