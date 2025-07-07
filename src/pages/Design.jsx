@@ -100,9 +100,9 @@ export default function Design() {
 
 
   return (
-    <section className = "min-h-screen w-viewport bg-[url('/images/Backgrounds/space-bg.png')] bg-cover bg-center -mt-20 pt-30 px-20">
+    <section className = "min-h-screen w-viewport bg-[url('/images/Backgrounds/starry-bg.png')] bg-repeat-y bg-top -mt-20 pt-30 px-5 md:px-30">
       <h1 className = "hidden md:flex mb-5">Explore my design...</h1>
-      <h2 className = "flex md:hidden mb-5">Explore my design... </h2>
+      <h2 className = "flex md:hidden mb-5">My Design </h2>
 
       <TabGroup>
       <TabList className = "flex flex-row flex-wrap gap-5 mb-5">

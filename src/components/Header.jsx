@@ -82,7 +82,7 @@ function NavLinks({ currentPath, hash }) {
       >
         Design Portfolio
       </Link>
-      <Link
+      {/* <Link
         to="/projects"
         onClick={() => window.scrollTo({ top: 0, behavior: "instant" })}
         className={`hover:border-b-2 py-5 md:py-6 border-white transition-all duration-200 ${
@@ -90,7 +90,7 @@ function NavLinks({ currentPath, hash }) {
         }`}
       >
         Projects
-      </Link>
+      </Link> */}
       <Link
         to="/#contact"
         className={`hover:border-b-2 py-5 md:py-6 border-white transition-all duration-200 ${
