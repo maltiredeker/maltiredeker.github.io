@@ -11,7 +11,7 @@ export default function CustomSlider({speed, setSpeed}){
 
     return (
 
-        <div className = "glassCard flex !gap-10 !justify-start align-middle w-full !pl-10 md:w-[400px] md:absolute md:bottom-15 md:left-20">
+        <div className = "glassCard flex !gap-10 !justify-start !items-center w-full !pl-10 md:w-[400px] md:absolute md:bottom-15 md:left-20">
             <FontAwesomeIcon className = "text-[40px]" icon={faSpinner} />
             <div className = "flex flex-col justify-center w-full">
                 <p className = "text-left">Speed Control</p>

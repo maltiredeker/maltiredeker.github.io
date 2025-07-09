@@ -2,7 +2,7 @@ import React from 'react';
 import { useRef, useState, useEffect} from 'react';
 import Contact from './Contact';
 import MyUniverse from '../planets/myUniverse';
-import { faCaretDown, faCircle, faMoon} from '@fortawesome/free-solid-svg-icons';
+import { faCaretDown, faCircle, faMoon, faCircleInfo} from '@fortawesome/free-solid-svg-icons';
 import {faCircle as faCircleReg} from '@fortawesome/free-regular-svg-icons'
 ;import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import GlassCard from '../components/GlassCard';
@@ -12,10 +12,11 @@ export default function Home() {
 
   const [speed, setSpeed] = useState(50);
   const [showPhone, setShowPhone] = useState(getShow());
+  const [hideTooltip, setHideTooltip] = useState(false);
 
   function getShow() {
     const width = window.innerWidth;
-    if (width < 600) return true;
+    if (width < 800) return true;
     return false;
   }
    useEffect(() => {
@@ -32,24 +33,44 @@ export default function Home() {
 
     const scrollToSection = () => {
       contactRef.current.scrollIntoView({ behavior: "smooth" });
+
     };
+
+    const [isAtTop, setIsAtTop] = useState(true);
+
+    useEffect(() => {
+      const handleScroll = () => {
+        setIsAtTop(window.scrollY < 50);
+      };
+
+      window.addEventListener("scroll", handleScroll);
+      return () => window.removeEventListener("scroll", handleScroll);
+    }, []);
 
 
   return (
     <div>
-      <section className = "min-h-screen w-viewport bg-[url('/images/Backgrounds/space-bg.png')] bg-cover bg-center -mt-20">
+      <section className = "flex flex-col min-h-fit md:min-h-screen w-viewport bg-[url('/images/ulukai/corona_rt.png')] bg-cover bg-center -mt-20">
        
-        <h1 className = "hidden !text-[80px] w-0.5 md:absolute md:flex md:bottom-45 md:left-20 leading-[80px]"><b>WELCOME TO MY WORLD...</b></h1>
+        <h1 className = "!text-[30px] leading-[35px] w-50 top-[340px] left-5 absolute md:!text-[80px] md:w-100 md:absolute md:bottom-45 md:left-20 md:leading-[80px]"><b>WELCOME TO MY WORLD.</b></h1>
 
         {/*<GlassCard Title = "Title" Alt_Title = "Title" Text = "This is some sample text for yall."/>*/}
-        <MyUniverse speed = {speed}/>
+        <MyUniverse speed = {speed} setHideTT = {setHideTooltip}/>
 
-        <button onClick = {scrollToSection} 
-              className = "flex justify-center content-center bg-none border-2 border-white fixed bottom-10 right-10 rounded-md text-[50px] w-15 h-15 hover:bg-white/50 z-20 backdrop-blur-xl">
+       {isAtTop && <button onClick = {scrollToSection} 
+          className = "flex justify-center content-center bg-none border-2 border-white fixed top-[420px] right-5 rounded-md text-[50px] w-15 h-15 hover:bg-white/50 z-20 backdrop-blur-xl md:bottom-20 md:top-auto md:right-15">
           <FontAwesomeIcon icon={faCaretDown} />       
-        </button>
+        </button>}
 
-        <div className = "flex flex-col px-10 md:px-0 gap-2 mt-[-30px]">
+        {/*Tooltip*/}
+        {!showPhone && hideTooltip && 
+         <div className = "absolute top-22 right-1/2 translate-x-1/2  glassCard flex gap-5 px-5 !py-4 justify-between !items-center w-[300px] opacity-50">
+             <FontAwesomeIcon className = "text-[28px]"icon={faCircleInfo} />
+              <p className = "!text-[12px]">Click on the planet, ring and moon to find out more about me.</p>
+          </div>
+          }
+
+        <div className = "flex flex-col px-5 md:px-0 gap-4">
          <CustomSlider speed = {speed} setSpeed = {setSpeed}/>
 
           
@@ -65,10 +86,10 @@ export default function Home() {
                     </div>
           }
 
-          {showPhone && 
+        {showPhone && 
           
          <div className = "flex justify-betweeen gap-2 items-stretch">
-               <div className = "flex p-10  w-[30%] self-stretch rounded-lg border border-white bg-white/20 justify-center items-center "><FontAwesomeIcon className = "text-[40px]" icon={faCircle} /></div>
+               <div className = "flex p-10 w-[30%] self-stretch rounded-lg border border-white bg-white/20 justify-center items-center "><FontAwesomeIcon className = "text-[40px]" icon={faCircle} /></div>
 
                <GlassCard Title="Marcia" 
                           Alt_Title="(Mārcia)" 

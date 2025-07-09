@@ -1,6 +1,8 @@
 import React from 'react';
 import { Tab, TabGroup, TabList, TabPanel, TabPanels } from '@headlessui/react'
 import CustomGallery from "../components/CustomGallery.jsx"
+import { useState, useEffect } from 'react';
+import {Menu, MenuButton, MenuItems, MenuItem} from '@headlessui/react'
 
 
 export default function Design() {
@@ -97,26 +99,47 @@ export default function Design() {
   '/images/Posters/img17.jpg',
 ];
 
+  const [phone, setPhone] = useState(getPhone());
 
+  function getPhone() {
+      const width = window.innerWidth;
+      if (width < 800) return true;
+      return false;
+    }
+
+    useEffect(() => 
+      {
+        const handleResize = () => {
+          setPhone(getPhone());
+        };
+
+        window.addEventListener("resize", handleResize);
+        return () => window.removeEventListener("resize", handleResize);
+      }, []);
+
+    
 
   return (
-    <section className = "min-h-screen w-viewport bg-[url('/images/Backgrounds/starry-bg.png')] bg-repeat-y bg-top -mt-20 pt-30 px-5 md:px-30">
+    <section className = "min-h-screen w-screen bg-cover bg-center -mt-20 pt-30 px-5 md:px-30">
       <h1 className = "hidden md:flex mb-5">Explore my design...</h1>
       <h2 className = "flex md:hidden mb-5">My Design </h2>
+    
 
       <TabGroup>
-      <TabList className = "flex flex-row flex-wrap gap-5 mb-5">
+      <TabList className = "flex flex-row flex-wrap gap-2 md:gap-5 mb-5 w-full">
         {tabLabels.map((label) => (
-          <Tab key = {label} className = "whiteGradientButton data-selected:bg-white/30">{label}</Tab>
+          <Tab key = {label} className = "whiteGradientButton !px-2 text-[15px] md:text-[1rem] md:!px-5 data-selected:bg-white/30">{label}</Tab>
         ))}
       </TabList>
-      <TabPanels className = "mb-20 md:mb-10">
+      
+      <TabPanels className = "pb-10 mb-20 md:pb-20 md:mb-10">
         <TabPanel><CustomGallery images = {TraditionalImages}/></TabPanel>
         <TabPanel><CustomGallery images = {DigitalImages}/></TabPanel>
         <TabPanel><CustomGallery images = {LogosImages}/></TabPanel>
         <TabPanel><CustomGallery images = {PostersImages}/></TabPanel>
       </TabPanels>
     </TabGroup>
+    
     </section>
   );
 }

@@ -5,7 +5,7 @@ import { faEnvelope } from '@fortawesome/free-solid-svg-icons';
 
 export default function Contact() {
   return (
-    <section id = "contact" className = "min-h-screen w-viewport bg-[url('/images/Backgrounds/starry-bg.png')] bg-cover bg-center pt-30 px-20 mb-10 lg:mb-5">
+    <section id = "contact" className = "min-h-fit w-viewport bg-[url('/images/ulukai/corona_lf.png')] bg-cover bg-center pb-30 pt-30 px-20 lg:mb-5">
       <div className = "flex flex-col justify-center items-center md:flex-row">
       
         <h2 className="flex lg:hidden md:hidden text-white mb-5"> Hi, I'm Malti! </h2>

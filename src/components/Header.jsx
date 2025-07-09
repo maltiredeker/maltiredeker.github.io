@@ -32,7 +32,7 @@ export default function Header() {
   return (
     <>
       {/* Header */}
-      <header className="sticky top-0 z-50 backdrop-blur bg-[--dark-blue]/20 flex flex-col md:flex-row justify-between items-center px-10">
+      <header className="sticky top-0 z-50 backdrop-blur bg-[--dark-blue]/20 flex flex-col md:flex-row justify-between items-center pl-3 pr-6 md:px-10">
         <div className="flex w-full md:w-auto justify-between items-center">
           <img src={signature} alt="MaltiRed" className="w-20 h-auto" />
           <button

@@ -9,6 +9,7 @@ export default function CustomGallery({images}){
 
     //index is closed
     const [index, setIndex] = useState(-1);
+    const [loading, setLoading] = useState(true);
 
     //map all the images to the Gallery required format (src, width, height)
 
@@ -16,7 +17,7 @@ export default function CustomGallery({images}){
 
     function getRowHeight() {
         const width = window.innerWidth;
-        if (width < 600) return 150;
+        if (width < 800) return 150;
         if (width < 1024) return 250;
         return 300;
     }
@@ -30,6 +31,7 @@ export default function CustomGallery({images}){
     const [photos, setPhotos] = useState([]);
 
     useEffect(() => {
+        setLoading(true);
         Promise.all(
             images.map(src => {
                 return new Promise(resolve => {
@@ -44,11 +46,19 @@ export default function CustomGallery({images}){
                     img.src = src;
                 });
             })
-        ).then(setPhotos);
-    }, [images]);
+        ).then((loaded) => {
+      setPhotos(loaded);
+      setLoading(false); // 👈 done loading
+    });
+  }, [images]);
 
     return(
+        
         <div>
+
+            {loading && <div className = "flex w-full items-center justify-center"> 
+                <img src="images/loading.gif" alt="Loading..." className="w-16 h-16" />
+                        </div>}
             <Gallery 
                 images = {photos}
                 onClick = {(index) => setIndex(index)}
