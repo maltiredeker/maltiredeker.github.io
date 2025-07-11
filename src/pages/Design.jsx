@@ -7,29 +7,31 @@ import {Menu, MenuButton, MenuItems, MenuItem} from '@headlessui/react'
 
 export default function Design() {
 
-  const tabLabels = ["Traditional", "Digital", "Logos", "Posters & Merch"];
+  const tabLabels = ["Traditional", "Digital", "Logos", "Posters"];
 
   const TraditionalImages = [
   '/images/Traditional/img1.jpg',
   '/images/Traditional/img2.jpg',
-  '/images/Traditional/img3.jpg',
-  '/images/Traditional/img4.JPG',
-  '/images/Traditional/img5.PNG',
-  '/images/Traditional/img6.jpg',
-  '/images/Traditional/img7.jpg',
-  '/images/Traditional/img8.jpg',
-  '/images/Traditional/img9.jpeg',
-  '/images/Traditional/img10.jpeg',
-  '/images/Traditional/img11.jpeg',
-  '/images/Traditional/img12.PNG',
-  '/images/Traditional/img13.jpeg',
+  '/images/Traditional/img3.jpeg',
+  '/images/Traditional/img4.jpeg',
+  '/images/Traditional/img5.jpg',
+  '/images/Traditional/img6.jpeg',
+  '/images/Traditional/img7.jpeg',
+  '/images/Traditional/img8.jpeg',
+  '/images/Traditional/img9.jpg',
+  '/images/Traditional/img10.jpg',
+  '/images/Traditional/img11.jpg',
+  '/images/Traditional/img12.jpg',
+  '/images/Traditional/img13.jpg',
   '/images/Traditional/img14.jpeg',
-  '/images/Traditional/img15.jpeg',
+  '/images/Traditional/img15.jpg',
   '/images/Traditional/img16.jpg',
   '/images/Traditional/img17.jpg',
   '/images/Traditional/img18.jpg',
   '/images/Traditional/img19.jpg',
-  '/images/Traditional/img20.jpeg',
+  '/images/Traditional/img20.jpg',
+  '/images/Traditional/img21.jpg',
+
 ];
 
 
@@ -55,6 +57,16 @@ export default function Design() {
   '/images/Digital/img19.jpeg',
   '/images/Digital/img20.jpeg',
   '/images/Digital/img21.jpeg',
+  '/images/Digital/img22.png',
+  '/images/Digital/img23.png',
+  '/images/Digital/img24.png',
+  '/images/Digital/img25.png',
+  '/images/Digital/img26.png',
+  '/images/Digital/img27.png',
+  '/images/Digital/img28.png',
+  '/images/Digital/img29.png',
+  '/images/Digital/img30.png',
+
 ];
 
 
@@ -70,13 +82,17 @@ export default function Design() {
   '/images/Logos/img9.png',
   '/images/Logos/img10.jpeg',
   '/images/Logos/img11.jpeg',
-  '/images/Logos/img12.jpeg',
-  '/images/Logos/img13.jpeg',
-  '/images/Logos/img14.jpeg',
-  '/images/Logos/img15.jpeg',
-  '/images/Logos/img16.jpeg',
-  '/images/Logos/img17.jpeg',
-  '/images/Logos/img18.jpeg',
+  '/images/Logos/img12.png',
+  '/images/Logos/img13.png',
+  '/images/Logos/img14.png',
+  '/images/Logos/img15.png',
+  '/images/Logos/img16.png',
+  '/images/Logos/img17.png',
+  '/images/Logos/img18.png',
+  '/images/Logos/img19.png',
+  '/images/Logos/img20.png',
+  '/images/Logos/img21.png'
+
 ];
 
   const PostersImages = [
@@ -97,6 +113,12 @@ export default function Design() {
   '/images/Posters/img15.jpg',
   '/images/Posters/img16.jpeg',
   '/images/Posters/img17.jpg',
+  '/images/Posters/img18.png',
+  '/images/Posters/img19.png',
+  '/images/Posters/img20.png',
+  '/images/Posters/img21.png',
+
+
 ];
 
   const [phone, setPhone] = useState(getPhone());

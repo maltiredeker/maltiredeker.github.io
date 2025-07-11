@@ -2,6 +2,8 @@ import React from 'react';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faLinkedin, faInstagram} from '@fortawesome/free-brands-svg-icons';
 import { faEnvelope } from '@fortawesome/free-solid-svg-icons';
+import { faFile } from '@fortawesome/free-regular-svg-icons';
+
 
 export default function Contact() {
   return (
@@ -22,24 +24,29 @@ export default function Contact() {
           
           <div className = "flex flex-col w-full lg:flex-row lg:justify-between lg:items-center lg:pr-0 lg:gap-4">
                {/* Social Media Buttons */}
-              <div className = "flex justify-evenly w-full mb-5 lg:mb-0 lg:justify-between lg:mr-5 lg:w-1/2">
+              <div className = "flex justify-evenly w-full mb-5 lg:mb-0 md:w-full md:gap-3 md:justify-start ">
                   <button className = "flex flex-col items-center px-3 pt-2 rounded-md hover:bg-white/50" onClick = {() => window.open("https://www.linkedin.com/in/maltiredeker", '_blank')}>
-                    <FontAwesomeIcon className = "text-5xl mb-2" icon={faLinkedin} />
+                    <FontAwesomeIcon className = "text-4xl mb-2" icon={faLinkedin} />
                     <p> Linkedin </p>
                   </button>
 
                   <button className = "flex flex-col items-center px-2 pt-2 rounded-md hover:bg-white/50" onClick = {() => window.open("https://www.instagram.com/malti.red", '_blank')}> 
-                    <FontAwesomeIcon className = "text-5xl mb-2" icon = {faInstagram}/>
+                    <FontAwesomeIcon className = "text-4xl mb-2" icon = {faInstagram}/>
                     <p> Instagram </p>
                   </button>
 
                   <button className ="flex flex-col items-center px-5 pt-2 rounded-md hover:bg-white/50" onClick = {() => window.location.href = 'mailto:maltiredeker@gmail.com'}>
-                    <FontAwesomeIcon className = "text-5xl mb-2" icon={faEnvelope} />
+                    <FontAwesomeIcon className = "text-4xl mb-2" icon={faEnvelope} />
                     <p> Email </p>
+                  </button>
+
+                  <button className="hidden md:flex flex-col items-center px-5 pt-2 rounded-md hover:bg-white/50" onClick = {() => window.open("src/assets/UX_Design_CV.pdf")}>
+                    <FontAwesomeIcon className = "text-4xl mb-2" icon={faFile} />
+                    <p> CV </p>
                   </button>
               </div>
               {/*Download CV Button */}
-              <a href = "src/assets/UX_Design_CV.pdf" download className = "flex text-center backdrop-blur bg-gradient-to-r from-white/30 justify-center items-center to-white/10 px-4 py-2 rounded-lg shadow text-white w-full lg:w-1/2 border border-white hover:bg-white/30 min-w-[200px]">Download my CV</a>
+              <a href = "src/assets/UX_Design_CV.pdf" download className = "flex text-center backdrop-blur bg-gradient-to-r from-white/30 justify-center items-center to-white/10 px-4 py-2 rounded-lg shadow text-white w-full md:hidden border border-white hover:bg-white/30 min-w-[200px]">Download my CV</a>
           </div>
         </div>
     </div>
