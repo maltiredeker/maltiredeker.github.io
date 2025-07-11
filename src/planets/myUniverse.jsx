@@ -141,8 +141,7 @@ function Moon({card, setCard, speed, phoneOn, setLoading}) {
       
     ]).then(([moon]) => {
       setTexture(moon);
-      setLoading(false);
-    });
+        });
   }, []);
   useFrame(() => {
     if (orbitRef.current) {
