@@ -1,7 +1,7 @@
 import { Canvas, useFrame, useLoader, useThree } from "@react-three/fiber";
 import { TextureLoader, AdditiveBlending} from "three";
 import { useRef, useMemo, useEffect, useState } from "react";
-import planetTextureSrc from "/images/Textures/2k_mars.png";
+import planetTextureSrc from "/images/Textures/2k_mars.jpeg";
 import moonTextureSrc from "/images/Textures/moon_texture.jpg";
 import asteroidTextureSrc from "/images/Textures/2k_ceres_fictional.jpg"
 import cloudSrc from "/images/Textures/2k_earth_clouds.jpg"
@@ -39,14 +39,14 @@ function RotatingPlanet({cardM, setCardM, cardR, setCardR, speed, phoneOn, setLo
   }, []);
 
 
-  const asteroidCount = 250;
+  const asteroidCount = 200;
   const asteroidRadius = 2.0;
   const asteroids = useMemo(() => {
     const arr = [];
     for (let i = 0; i < asteroidCount; i++) {
       const angle = (i / asteroidCount) * 2 * Math.PI;
       const x = Math.cos(angle) * (asteroidRadius + Math.random() * 0.6); //spread along x axis
-      const z = Math.sin(angle) * (asteroidRadius + Math.random() * 0.6); //spread along y axis
+      const z = Math.sin(angle) * (asteroidRadius + Math.random() * 0.6); //spread along z axis
       const y = (Math.random() - 0.5) * 0.05; // slight vertical variation
       arr.push([x, y, z]);
     }

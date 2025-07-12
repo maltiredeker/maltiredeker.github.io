@@ -2,7 +2,7 @@ import React from 'react';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faLinkedin, faInstagram} from '@fortawesome/free-brands-svg-icons';
 import { faEnvelope } from '@fortawesome/free-solid-svg-icons';
-import { faFile } from '@fortawesome/free-regular-svg-icons';
+import { faFloppyDisk } from '@fortawesome/free-regular-svg-icons';
 
 
 export default function Contact() {
@@ -35,15 +35,20 @@ export default function Contact() {
                     <p> Instagram </p>
                   </button>
 
-                  <button className ="flex flex-col items-center px-5 pt-2 rounded-md hover:bg-white/50" onClick = {() => window.location.href = 'mailto:maltiredeker@gmail.com'}>
+                  <button className ="flex flex-col items-center px-6 pt-2 rounded-md hover:bg-white/50" onClick = {() => window.location.href = 'mailto:maltiredeker@gmail.com'}>
                     <FontAwesomeIcon className = "text-4xl mb-2" icon={faEnvelope} />
                     <p> Email </p>
                   </button>
 
-                  <button className="hidden md:flex flex-col items-center px-5 pt-2 rounded-md hover:bg-white/50" onClick = {() => window.open("src/assets/UX_Design_CV.pdf")}>
-                    <FontAwesomeIcon className = "text-4xl mb-2" icon={faFile} />
-                    <p> CV </p>
-                  </button>
+                  <a
+                    href="/src/assets/UX_Design_CV.pdf"
+                    download
+                    className="hidden md:flex flex-col items-center px-8 pt-2 rounded-md hover:bg-white/50"
+                  >
+                    <FontAwesomeIcon className="text-4xl mb-2" icon={faFloppyDisk} />
+                    <p>CV</p>
+                  </a>
+
               </div>
               {/*Download CV Button */}
               <a href = "src/assets/UX_Design_CV.pdf" download className = "flex text-center backdrop-blur bg-gradient-to-r from-white/30 justify-center items-center to-white/10 px-4 py-2 rounded-lg shadow text-white w-full md:hidden border border-white hover:bg-white/30 min-w-[200px]">Download my CV</a>
