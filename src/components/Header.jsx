@@ -45,26 +45,32 @@ export default function Header() {
 
         {/* Desktop Nav */}
         <nav className="hidden md:flex flex-row gap-10 items-center justify-between py-0">
-          <NavLinks currentPath={currentPath} hash={location.hash} />
+          <NavLinks currentPath={currentPath} hash={location.hash} setIsOpen={setIsOpen} />
         </nav>
       </header>
 
       {/* Mobile Nav Overlay */}
       {isOpen && (
         <nav ref = {navRef} className="fixed top-20 right-0 z-50 h-screen w-2/3 max-w-xs bg-[--dark-blue]/20 backdrop-blur flex flex-col gap-5 p-6 transition-transform duration-300 ease-in-out translate-x-0 md:hidden">
-          <NavLinks currentPath={currentPath} hash={location.hash} />
+          <NavLinks currentPath={currentPath} hash={location.hash}  setIsOpen={setIsOpen}/>
         </nav>
       )}
     </>
   );
 }
 
-function NavLinks({ currentPath, hash }) {
+function NavLinks({ currentPath, hash, setIsOpen}) {
+
+   function handleClick(scrollToTop = true, behavior = "smooth") {
+    if (scrollToTop) window.scrollTo({ top: 0, behavior });
+    if (setIsOpen) setIsOpen(false);
+  }
+  
   return (
     <>
       <Link
         to="/"
-        onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
+        onClick={() => handleClick(true, "smooth")}
         className={`hover:border-b-2 py-5 md:py-6 border-white transition-all duration-200 ${
           currentPath === "/#home" && hash !== "#contact"
             ? "border-b-2"
@@ -75,7 +81,7 @@ function NavLinks({ currentPath, hash }) {
       </Link>
       <Link
         to="/design"
-        onClick={() => window.scrollTo({ top: 0, behavior: "instant" })}
+        onClick={() => handleClick(true, "instant")}        
         className={`hover:border-b-2 py-5 md:py-6 border-white transition-all duration-200 ${
           currentPath === "/design" ? "border-b-2" : "border-auto"
         }`}
@@ -93,6 +99,7 @@ function NavLinks({ currentPath, hash }) {
       </Link> */}
       <Link
         to="/#contact"
+        onClick={() => handleClick(false)}
         className={`hover:border-b-2 py-5 md:py-6 border-white transition-all duration-200 ${
           hash === "#contact" ? "border-b-2" : "border-auto"
         }`}
