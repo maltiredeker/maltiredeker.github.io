@@ -13,6 +13,13 @@ export default function Home() {
   const [speed, setSpeed] = useState(50);
   const [showPhone, setShowPhone] = useState(getShow());
   const [hideTooltip, setHideTooltip] = useState(false);
+  const [screenHeight, setScreenHeight] = useState(getHeight());
+
+  function getHeight(){
+    const height = window.innerHeight;
+    if (height < 650) return true;
+    return false;
+  }
 
   function getShow() {
     const width = window.innerWidth;
@@ -22,6 +29,7 @@ export default function Home() {
    useEffect(() => {
       const handleResize = () => {
         setShowPhone(getShow());
+        setScreenHeight(getHeight());
       };
   
       window.addEventListener("resize", handleResize);
@@ -52,8 +60,12 @@ export default function Home() {
     <div>
       <section className = "flex flex-col min-h-fit md:min-h-screen w-viewport bg-[url('/images/ulukai/corona_rt.png')] bg-cover bg-center -mt-20">
        
-        <h1 className = "!text-[30px] leading-[35px] w-50 top-[340px] left-5 absolute md:!text-[80px] md:w-100 md:absolute md:bottom-45 md:left-20 md:leading-[80px]"><b>WELCOME TO MY WORLD.</b></h1>
+        {!screenHeight && <h1 className = "!text-[30px] leading-[35px] w-50 top-[340px] left-5 absolute md:!text-[80px] md:w-[300px] md:top-auto md:bottom-1/3 md:left-20 md:leading-[80px]"><b>WELCOME TO MY WORLD.</b></h1>
+          }
 
+        {screenHeight && 
+           <h1 className = "!text-[30px] leading-[35px] w-50 top-[340px] left-5 absolute md:!text-[60px] md:w-[200px] md:top-auto md:bottom-1/3 md:left-20 md:leading-[60px]"><b>WELCOME TO MY WORLD.</b></h1>
+        }
         {/*<GlassCard Title = "Title" Alt_Title = "Title" Text = "This is some sample text for yall."/>*/}
         <MyUniverse speed = {speed} setHideTT = {setHideTooltip}/>
 

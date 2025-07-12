@@ -254,7 +254,7 @@ export default function MyUniverse({speed, setHideTT}) {
       {!phone && showMaltiCard && <GlassCard Title="Malti" 
                                   Alt_Title="(मालती)" 
                                   Text="The name Malti is a name of Indian origin that means small, fragrant flower. It could also mean Moonlight."  
-                                  pos={['120px', 'auto', 'auto', '80px']}/>}
+                                  pos={['110px', 'auto', 'auto', '80px']}/>}
       {!phone && showMarciaCard && <GlassCard Title="Marcia" 
                                   Alt_Title="(Mārcia)" 
                                   Text="Marcia is the Latin equivalent to the title Marcus, which means “dedicated to Mars”, the god of war in Roman mythology."  
