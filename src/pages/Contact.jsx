@@ -41,7 +41,7 @@ export default function Contact() {
                   </button>
 
                   <a
-                    href="/src/assets/UX_Design_CV.pdf"
+                    href="src/assets/UX_Design_CV.pdf"
                     download
                     className="hidden md:flex flex-col items-center px-8 pt-2 rounded-md hover:bg-white/50"
                   >
