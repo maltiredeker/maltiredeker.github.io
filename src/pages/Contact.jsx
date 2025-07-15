@@ -41,7 +41,7 @@ export default function Contact() {
                   </button>
 
                   <a
-                    href="/UX_Design_CV.pdf"
+                    href="/SWE_CV.pdf"
                     download
                     className="hidden md:flex flex-col items-center px-8 pt-2 rounded-md hover:bg-white/50"
                   >
@@ -51,7 +51,7 @@ export default function Contact() {
 
               </div>
               {/*Download CV Button */}
-              <a href = "/UX_Design_CV.pdf" download className = "flex text-center backdrop-blur bg-gradient-to-r from-white/30 justify-center items-center to-white/10 px-4 py-2 rounded-lg shadow text-white w-full md:hidden border border-white hover:bg-white/30 min-w-[200px]">Download my CV</a>
+              <a href = "/SWE_CV.pdf" download className = "flex text-center backdrop-blur bg-gradient-to-r from-white/30 justify-center items-center to-white/10 px-4 py-2 rounded-lg shadow text-white w-full md:hidden border border-white hover:bg-white/30 min-w-[200px]">Download my CV</a>
           </div>
         </div>
     </div>
