@@ -17,10 +17,8 @@ export default function Contact() {
         <div className = "flex flex-col">
           <h1 className="hidden md:flex text-white md:w-full md:mb-4" style={{ textShadow: '0 0 4px white' }}> Hi, I'm Malti! </h1>
 
-          <p className = "text-center w-full mb-10 md:text-left md:pr-0 lg:pr-20"> I’ve always been a creative person and growing up I would be caught drawing in any given moment. 
-            As I got older, I started exploring digital mediums and even went on to study computer science. 
-            I’m passionate about combining design with technology - 
-            although I am slowly making peace with the fact that my dream roles will likely be taken over by AI soon oof..</p>
+          <p className = "text-center w-full mb-10 md:text-left md:pr-0 lg:pr-20"> Growing up, I could be found drawing at any given moment. As I got older, that creativity shifted toward digital mediums and eventually led me to study computer science. If there’s one thing my degree taught me, it’s how to be a lazy designer — I’ll always find the most efficient way to bring my ideas to life.
+            </p>
           
           <div className = "flex flex-col w-full lg:flex-row lg:justify-between lg:items-center lg:pr-0 lg:gap-4">
                {/* Social Media Buttons */}

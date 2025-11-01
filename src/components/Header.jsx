@@ -88,15 +88,13 @@ function NavLinks({ currentPath, hash, setIsOpen}) {
       >
         Design Portfolio
       </Link>
-      {/* <Link
-        to="/projects"
-        onClick={() => window.scrollTo({ top: 0, behavior: "instant" })}
-        className={`hover:border-b-2 py-5 md:py-6 border-white transition-all duration-200 ${
-          currentPath === "/projects" ? "border-b-2" : "border-auto"
-        }`}
-      >
-        Projects
-      </Link> */}
+      <a
+        href = "https://malti-redeker-portfolio.notion.site/Hi-I-m-Malti-29c14e9ab8688074ad6cff427535ae6e?source=copy_link"
+        className={`hover:border-b-2 py-5 md:py-6 border-white transition-all duration-200 `}     
+        target="_blank" >
+
+        UX/UI Projects
+      </a> 
       <Link
         to="/#contact"
         onClick={() => handleClick(false)}

@@ -145,7 +145,7 @@ function Moon({card, setCard, speed, phoneOn, setLoading}) {
   }, []);
   useFrame(() => {
     if (orbitRef.current) {
-      orbitRef.current.rotateY(0.01 * getSpeedFactor(speed)); //orbit around planet
+      orbitRef.current.rotateY(0.005 * getSpeedFactor(speed)); //orbit around planet
 
       if (moonRef.current) {
         moonRef.current.rotateY(0.01 * getSpeedFactor(speed)); //self-orbit
